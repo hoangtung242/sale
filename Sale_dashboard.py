@@ -2,7 +2,6 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -15,7 +14,6 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename)
 else:
-    os.chdir(r"C:\Users\hoang\Desktop\Dashboard\Data")
     df = pd.read_csv("Superstore.csv")
 col1, col2 = st.columns((2))
 df['Order Date'] = pd.to_datetime(df['Order Date'])
